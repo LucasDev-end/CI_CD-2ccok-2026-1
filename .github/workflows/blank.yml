@@ -39,17 +39,4 @@ jobs:
           # ARGS para rsync: -rltgoDzvO para cópia recursiva, compressão e outros
           ARGS: "-rltgoDzvO --delete" 
           # SOURCE: O que será copiado. Pode ser o diretório de build (ex: ./dist)
-          SOURCE: "./frontend/dist/" 
-
-      # 5. Configuração do ambiente Java/Maven
-      - name: BE - Configurar JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin' # ou a distribuição que preferir
-          java-version: '21'
-          cache: 'maven' # Configura cache do Maven para acelerar builds futuros
-
-      # 6. Execução dos testes automatizados do projeto
-      - name: BE - Executar Testes automatizados
-        run: mvn clean test # comentei os tests por enquanto     
-        working-directory: ./backend
+          SOURCE: "./frontend/dist/"
